@@ -1,0 +1,10 @@
+<app-navbar-detail title="User Setting" titleButton="Log Out" (tapButton)="logOut()"></app-navbar-detail>
+
+<div class="pt-5 text-center">
+    <p>User Setting works!</p>
+    <p>{{ data['email'] }}</p>
+    <p>{{ data.username }}</p>
+    <p>{{ data.desc }}</p>
+    <p>{{ data.birthday.day }} / {{ data.birthday.month }} / {{ data.birthday.year }}</p>
+    <p>{{ data.role }}</p>
+</div>

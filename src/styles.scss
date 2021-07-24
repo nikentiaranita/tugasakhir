@@ -1,0 +1,277 @@
+/* Importing Bootstrap SCSS file. */
+@import "~bootstrap/scss/bootstrap";
+
+body {
+  margin: 0;
+  color: #000 !important;
+  height: 100%;
+}
+
+.font-medium {
+  font-family: "Poppins", sans-serif !important;
+  line-height: 50px !important;
+  font-weight: 400 !important;
+  font-size: 50px !important;
+  letter-spacing: -0.05rem !important;
+}
+
+.bg-head {
+  background-color: #f783a6;
+}
+
+.bg-primary {
+  background-color: #da4672 !important;
+}
+.border-bottom {
+  border-bottom: 2px solid black !important;
+}
+
+.border-top {
+  border-top: 2px solid black !important;
+}
+
+.link-black {
+  color: #000 !important;
+}
+
+.fw-bold {
+  font-weight: bold !important;
+}
+
+.bt-light {
+  color: #000;
+  background-color: #ffffff;
+  border-color: #000000;
+  border-radius: 100px !important;
+  padding: 0.375rem 0.75rem;
+
+  &:hover {
+    background-color: #000;
+    color: #fff;
+    border-color: #000;
+  }
+}
+
+.card-top {
+  margin: 0 10px;
+  p {
+    font-size: 0.7rem !important;
+    -webkit-line-clamp: 1;
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    margin-bottom: 0;
+  }
+  .count {
+    font-size: 3rem;
+    color: #00000040 !important;
+  }
+}
+
+.title {
+  -webkit-line-clamp: 2;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  margin-bottom: 0;
+  font-size: 16px !important;
+}
+
+.top-title {
+  font-size: 1.5rem;
+}
+
+@media (max-width: 767px) {
+  .card-top {
+    margin: 0 !important;
+    p {
+      font-size: 0.7rem !important;
+    }
+    .title {
+      font-size: 0.8rem !important;
+    }
+    .count {
+      font-size: 2.5rem !important;
+    }
+  }
+}
+
+@media (min-width: 490px) {
+  .font-medium {
+    font-size: 5rem !important;
+    line-height: 74px !important;
+  }
+}
+
+@media (min-width: 975px) {
+  .title {
+    font-size: 18px !important;
+  }
+}
+
+.date {
+  color: #00000060;
+}
+
+.row > * {
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 100%;
+  padding-right: 1.5rem * 0.5;
+  padding-left: 1.5rem * 0.5;
+  margin-top: 1.5rem;
+}
+
+h4,
+.h4 {
+  font-size: calc(1.275rem + 0.3vw) !important;
+}
+
+.feature-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 4rem;
+  height: 4rem;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  color: #fff;
+  border-radius: 0.75rem;
+}
+
+.btn-primary {
+  background-color: #da4672 !important;
+  border-color: #da4672 !important;
+}
+
+.btn:focus {
+  box-shadow: 0 0 0px 0.2rem rgb(160 26 66) !important;
+}
+
+.btn-primary.disabled,
+.btn-primary:disabled {
+  background-color: #da4672 !important;
+  border-color: #da4672 !important;
+  color: white;
+}
+
+.card-text {
+  line-height: 1em !important;
+  font-size: 3em !important;
+}
+
+.g-3,
+.gy-3 {
+  --bs-gutter-y: 1rem;
+}
+
+.body-form {
+  padding-top: 40px !important;
+  padding-bottom: 40px !important;
+  align-items: center !important;
+  display: flex !important;
+  min-height: 100vh;
+}
+
+.form-signin {
+  width: 100%;
+  max-width: 380px;
+  padding: 15px;
+  margin: auto;
+  border: 2px solid #e781a0;
+  border-radius: 20px;
+  background-color: #ffe8f0;
+}
+
+.form-floating {
+  position: relative;
+  ::placeholder {
+    opacity: 0 !important;
+  }
+}
+
+.form-floating > .form-control,
+.form-floating > .form-select {
+  height: calc(3.5rem + 2px);
+  line-height: 1.25;
+}
+.form-floating > .form-control {
+  padding: 1rem 0.75rem;
+}
+input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-floating > label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  padding: 1rem 0.75rem;
+  pointer-events: none;
+  border: 1px solid transparent;
+  transform-origin: 0 0;
+  transition: opacity 0.1s ease-in-out, transform 0.1s ease-in-out;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.form-floating > .form-control:focus,
+.form-floating > .form-control:not(:placeholder-shown) {
+  padding-top: 1.625rem;
+  padding-bottom: 0.625rem;
+  border-color: #e781a0;
+  box-shadow: 0 0 8px 0 #e781a0;
+}
+
+.form-floating > .form-control:focus ~ label,
+.form-floating > .form-control:not(:placeholder-shown) ~ label,
+.form-floating > .form-select ~ label {
+  opacity: 0.65;
+  transform: scale(0.85) translateY(-0.5rem) translateX(0.15rem);
+}
+
+.input-group.has-validation > .dropdown-toggle:nth-last-child(n + 4),
+.input-group.has-validation
+  > :nth-last-child(n + 3):not(.dropdown-toggle):not(.dropdown-menu) {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.login {
+  ::placeholder {
+    opacity: 0 !important;
+  }
+}
+
+.register {
+  .form-signin {
+    max-width: 450px;
+  }
+}
+
+span.input-group-text {
+  border-top-right-radius: 0 !important;
+  border-right: none;
+  border-bottom-right-radius: 0 !important;
+}
+
+.form-control {
+  border: 1px solid #e781a0;
+
+  &:focus {
+    border-color: #e781a0;
+    box-shadow: 0 0 8px 0 #e781a0;
+  }
+}
+
+.loading {
+  opacity: 0.2;
+}
+
+.fw-medium {
+  font-weight: 400 !important;
+}

@@ -1,0 +1,13 @@
+<mat-toolbar>
+    <mat-toolbar-row>
+        <button mat-icon-button (click)="sideBar()">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <span>{{ title }}</span>
+        <div fxFlex fxLayout="row" fxLayoutAlign="flex-end">
+            <button class="btn btn-primary" (click)="tapEmit()">
+                {{ titleButton }}
+            </button>
+        </div>
+    </mat-toolbar-row>
+</mat-toolbar>

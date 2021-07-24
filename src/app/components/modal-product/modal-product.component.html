@@ -1,0 +1,72 @@
+<form #formData='ngForm' (ngSubmit)="simpanResep()">
+    <div class="modal-header">
+        <h4 class="modal-title">{{ title }}</h4>
+        <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <div class="row justify-content-md-center mb-3">
+            <div class="text-center">
+                <img [src]="imgSrc" class="d-block mb-4 mx-lg-auto img-fluid" alt="Bootstrap Themes" width="150" loading="lazy" (click)="fileUpload.click()">
+                <div class="form-group">
+                    <input #fileUpload type="file" accept="image/*" class="form-control-file" id="image" (change)="getImage($event)" required>
+                  </div>
+            </div>
+        </div>
+
+        <div class="form-floating mb-3">
+            <input type="username" class="form-control" id="floatingName" placeholder="Nama Resep" [(ngModel)]="resep.name"
+            name="name" required>
+            <label for="floatingName">Nama resep</label>
+        </div>
+
+        <div class="form-floating mb-3">
+            <textarea class="form-control" placeholder="Leave a comment here" id="floatingDesc" rows="5" [(ngModel)]="resep.description" name="description" required></textarea>
+                <label for="floatingDesc">Deskripsi makanan</label>
+        </div>
+
+        <label>List Bahan</label>
+        <div *ngFor="let bahan of listBahan">
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-md-10">
+                        <input type="text" class="form-control" [value]="bahan" disabled>
+                    </div>
+                    <div class="col-md-2">
+                        <button mat-icon-button (click)="btnBatal()">
+                            <mat-icon>close</mat-icon>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div *ngIf='showTambah'>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-md-10">
+                        <input type="text" class="form-control" pl2aceholder="Resep bahan" name="tambahBahan" (change)="tambahBahan($event)" required>
+                    </div>
+                    <div class="col-md-2">
+                        <button mat-icon-button (click)="btnBatal()">
+                            <mat-icon>close</mat-icon>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="d-grid gap-2 d-md-flex mb-4">
+            <button type="button" class="btn btn-primary" (click)="btnTambah()">Tambah</button>
+        </div>
+
+        <div class="form-floating">
+            <textarea class="form-control" placeholder="Leave a comment here" id="floatingCara" rows="5" [(ngModel)]="resep.cara_pembuatan" name="cara_pembuatan" required></textarea>
+                <label for="floatingCara">Cara pembuatan</label>
+        </div>
+        
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" type="submit" [disabled]="!formData.valid">Simpan</button>
+    </div>
+</form>

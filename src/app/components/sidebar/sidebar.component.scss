@@ -1,0 +1,22 @@
+.profile-card {
+  text-align: center;
+  padding: 20px;
+
+  img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10%;
+  }
+}
+
+mat-nav-list {
+  mat-icon {
+    margin-right: 10px;
+  }
+}
+
+.list-item-active {
+  background-color: #f77a9f40;
+  font-weight: bold;
+}

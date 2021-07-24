@@ -1,0 +1,43 @@
+
+<div class="body-form text-center">
+    <main class="form-signin login">
+        <form  #formData='ngForm' (ngSubmit)="tapRegister()">
+            <h1 class="h3 mb-3 fw-bold">Niken Food</h1>
+            <h3 class="h5 mb-3 fw-normal">Masukkan data dengan benar</h3>
+        
+            <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="floatingInput" placeholder="email" [(ngModel)]="register.email"
+                name="email" required>
+                <label for="floatingInput">Email address</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="username" class="form-control" id="floatingUsername" placeholder="username" [(ngModel)]="register.username"
+                name="username" required>
+                <label for="floatingUsername">Username</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="password" class="form-control" id="floatingPassword" placeholder="password" [(ngModel)]="register.password"
+                name="password" required>
+                <label for="floatingPassword">Password</label>
+            </div>
+
+            <div class="form-floating mb-3">
+                <input class="form-control" placeholder="yyyy-mm-dd" name="dp"
+                            [(ngModel)]="register.birthday" id="floatingDate" ngbDatepicker #d="ngbDatepicker"
+                            (click)="d.toggle()" />
+                <label for="floatingDate">Birthday</label>
+            </div>
+
+            <div class="mb-3 text-left">
+                <label>Description <small>(optional)</small></label>
+                <textarea type="text" class="form-control" placeholder="Write your description"
+                    [(ngModel)]="register.desc" name="description" rows="5"></textarea>
+            </div>
+        
+            <button class="w-100 btn btn-lg btn-primary" type="submit" [disabled]="!formData.valid">Register</button>
+            
+            <button type="button" class="btn btn-link mt-2" routerLink="/login">Sudah punya akun ?</button>
+        </form>
+
+    </main>
+</div>

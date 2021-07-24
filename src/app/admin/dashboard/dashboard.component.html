@@ -1,0 +1,43 @@
+<mat-toolbar>
+  <mat-toolbar-row>
+      <button mat-icon-button (click)="sideBar()">
+          <mat-icon>menu</mat-icon>
+      </button>
+      <span>Dashboard</span>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<div class="container-fluid">
+    <div class="container">
+        <div class="row justify-content-md-center">
+            <div class="col-lg-8">
+                <div fxLayout="row wrap" fxLayoutGap="grid">
+                  <div fxFlex="50%" fxFlex.xs="100%" fxFlex.sm="50%">
+                    <div class="px-4">
+                        <div class="card">
+                            <div class="card-header text-right">
+                              Total Resep
+                            </div>
+                            <div class="card-body text-center">
+                              <p class="card-text">{{ totalResep }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div fxFlex="50%" fxFlex.xs="100%" fxFlex.sm="50%">
+                  <div class="px-4">
+                      <div class="card">
+                          <div class="card-header text-right">
+                            Total User
+                          </div>
+                          <div class="card-body text-center">
+                            <p class="card-text">{{ totalUser }}</p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

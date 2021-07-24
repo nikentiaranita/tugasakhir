@@ -1,0 +1,27 @@
+<mat-toolbar>
+    <mat-toolbar-row>
+        <button mat-icon-button (click)="sideBar()">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <span>List User</span>
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+<table class="table table-hover">
+    <thead>                
+        <tr>
+            <th scope="col">No</th>
+            <th scope="col">Nama</th>
+            <th scope="col">Email</th>
+            <th scope="col">Role</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of listUser; let idx=index">
+            <th scope="row">{{ idx+1 }}</th>
+            <th class="fw-medium">{{ user.payload.doc.data().username }}</th>
+            <th class="fw-medium">{{ user.payload.doc.data().email }}</th>
+            <th class="fw-medium">{{ user.payload.doc.data().role }}</th>
+        </tr>
+    </tbody>
+</table>

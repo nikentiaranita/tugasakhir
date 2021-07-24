@@ -1,0 +1,49 @@
+<app-navbar-detail title="Product List" titleButton="Tambah Product" (tapButton)="openModal()"></app-navbar-detail>
+
+<ng-template #content let-c="close" let-d="dismiss">
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Peringatan !</h4>
+      <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <p>Yakin ingin menghapus resep <b>{{ nameResep }}</b> ?</p>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-dark" (click)="c('Save click')">Batal</button>
+      <button type="button" class="btn btn-danger" (click)="deleteResep(content)">Hapus</button>
+    </div>
+</ng-template>
+
+<div *ngIf="empty" class="text-center py-5">
+    <h2>Data kosong !</h2>
+</div>
+
+<table *ngIf="!empty" class="table table-hover">
+    <thead>                
+        <tr>
+            <th scope="col">No</th>
+            <th scope="col">Nama</th>
+            <th scope="col">Author</th>
+            <th scope="col">Created at</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let lr of listResep; let idx=index">
+            <th scope="row">{{ idx+1 }}</th>
+            <th class="fw-medium">{{ lr.payload.doc.data().name }}</th>
+            <th class="fw-medium">{{ lr.payload.doc.data().author }}</th>
+            <th class="fw-medium">{{ lr.payload.doc.data().created_at }}</th>
+            <td>
+                <button mat-icon-button (click)="getDetail(lr.payload.doc.id)">
+                    <mat-icon>edit</mat-icon>
+                </button>
+                <button mat-icon-button (click)="confirmDeleteResep(content, lr.payload.doc.data().name, lr.payload.doc.id)">
+                    <mat-icon>delete</mat-icon>
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table>

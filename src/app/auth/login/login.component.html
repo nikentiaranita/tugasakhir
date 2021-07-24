@@ -1,0 +1,27 @@
+
+<div class="body-form text-center">
+    <main class="form-signin login">
+        <form  #formData='ngForm' (ngSubmit)="tapLogin()">
+            <h1 class="h3 mb-3 fw-bold">Niken Food</h1>
+            <h3 class="h5 mb-3 fw-normal">Please sign in</h3>
+        
+            <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="floatingInput" placeholder="email" [(ngModel)]="login.email"
+                name="email" required>
+                <label for="floatingInput">Email address</label>
+            </div>
+            <div class="form-floating mb-4">
+                <input type="password" class="form-control" id="floatingPassword" placeholder="password" [(ngModel)]="login.password"
+                name="password" required>
+                <label for="floatingPassword">Password</label>
+            </div>
+        
+            <button class="w-100 btn btn-lg btn-primary" type="submit" [disabled]="!formData.valid">Sign in</button>
+            
+            <button type="button" class="btn btn-link mt-2" routerLink="/register">Belum punya akun ?</button>
+        </form>
+
+        <button type="button" class="btn btn-link mt-5" routerLink="/">Kembali halaman utama</button>
+
+    </main>
+</div>

@@ -1,0 +1,28 @@
+.admin {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+mat-toolbar {
+  background: linear-gradient(135deg, #f5628d, #f784a6);
+  box-shadow: 0px 0px 8px 0px #6e2a3e !important;
+  color: white !important;
+  z-index: 2;
+}
+
+mat-drawer {
+  width: 200px;
+}
+
+mat-drawer-container {
+  height: 100%;
+}
+
+mat-drawer-content {
+  background-color: white;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}

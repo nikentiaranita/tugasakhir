@@ -1,0 +1,12 @@
+<div style="background-color: #fff6f9;">
+    <div *ngIf='showError' #alert class="alert alert-danger alert-dismissible position-fixed fade show" role="alert" style="width: 100%;">
+        <button type="button" class="close" aria-label="Close" (click)="closeAlert()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        {{ errorMessage }}
+    </div>
+    
+    <div [ngClass]="{'loading': loading}">
+        <router-outlet></router-outlet>
+    </div>
+</div>
