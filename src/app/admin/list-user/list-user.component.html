@@ -17,7 +17,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let user of listUser; let idx=index">
+        <tr class="cursor-pointer" *ngFor="let user of listUser; let idx=index" (click)="getDetail(user.payload.doc.id)">
             <th scope="row">{{ idx+1 }}</th>
             <th class="fw-medium">{{ user.payload.doc.data().username }}</th>
             <th class="fw-medium">{{ user.payload.doc.data().email }}</th>

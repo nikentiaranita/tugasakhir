@@ -16,6 +16,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { ListUserComponent } from './list-user/list-user.component';
 import { FormsModule } from '@angular/forms';
 import { AngularFireStorageModule } from "@angular/fire/storage";
+import { ModalUserComponent } from '../components/modal-user/modal-user.component';
 
 
 const routes: Routes = [
@@ -58,6 +59,7 @@ const routes: Routes = [
     ListUserComponent,
     NavbarDetailComponent,
     ModalProductComponent,
+    ModalUserComponent
   ],
   imports: [
     CommonModule,
