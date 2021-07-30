@@ -54,7 +54,6 @@ export class ProductsComponent implements OnInit {
   }
 
   getDetail(id: string) {
-    console.log(id);
     const modalRef = this.modalService.open(ModalProductComponent);
     modalRef.componentInstance.id = id;
   }

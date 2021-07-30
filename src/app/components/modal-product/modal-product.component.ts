@@ -60,6 +60,10 @@ export class ModalProductComponent implements OnInit {
     this.showTambah = false;
   }
 
+  hapusBahan(id: any) {
+    this.listBahan.splice(id, 1);
+  }
+
   getData() {
     if(this.id != null) {
       this.title = "Detail Resep";
